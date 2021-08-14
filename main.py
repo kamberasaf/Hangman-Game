@@ -30,13 +30,12 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 LETTERS_FONT = pygame.font.Font('arial_bold.ttf', 25)
 GUESS_FONT = pygame.font.Font('arial_bold.ttf', 34)
 WORD_FONT = pygame.font.Font('arial_bold.ttf', 40)
+TITLE_FONT = pygame.font.Font('arial_bold.ttf', 60)
+
 
 # Load Images
 press_any_key = pygame.image.load("press any key.png")
 hangman_title = pygame.image.load("Hangman title.png")
-guess_a_letter = pygame.image.load("guess a letter.png")
-you_lost = pygame.image.load("you lost.png")
-you_won = pygame.image.load("you won.png")
 
 images = []
 for i in range(7):
@@ -110,12 +109,16 @@ def new_game():
 
 
 def finish_play():
-    pygame.time.delay(1000)
+    pygame.time.delay(1300)
     pygame.display.update()
-    pygame.time.delay(1500)
-    try_again = LETTERS_FONT.render("Press any key to try again", True, BLACK)
-    screen.blit(try_again, (WIDTH / 2 - try_again.get_width() / 2, 10))
-    pygame.display.update()
+    for event in pygame.event.get():
+        pygame.time.delay(1700)
+        try_again = LETTERS_FONT.render("Press any key to try again", True, BLACK)
+        screen.blit(try_again, (WIDTH / 2 - try_again.get_width() / 2, 10))
+        pygame.display.update()
+        if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            continue
+
 
 
 def play():
@@ -148,12 +151,14 @@ def play():
                 break
 
         if won:
-            screen.blit(you_won, (11, 90))
+            text = TITLE_FONT.render("You won!", True, BLACK)
+            screen.blit(text, (25, 120))
             finish_play()
             return
 
         if current_state == MAX_NUM_OF_GUESSES:
-            screen.blit(you_lost, (11, 90))
+            text = TITLE_FONT.render("You lost!", True, BLACK)
+            screen.blit(text, (25, 120))
             finish_play()
             return
 

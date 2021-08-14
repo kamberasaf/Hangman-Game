@@ -1,1 +1,1 @@
-# Hangman-Game
+Hangman Game based on 'Pygame' module.

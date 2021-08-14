@@ -32,7 +32,6 @@ GUESS_FONT = pygame.font.Font('arial_bold.ttf', 34)
 WORD_FONT = pygame.font.Font('arial_bold.ttf', 40)
 TITLE_FONT = pygame.font.Font('arial_bold.ttf', 60)
 
-
 # Load Images
 press_any_key = pygame.image.load("press any key.png")
 hangman_title = pygame.image.load("Hangman title.png")
@@ -83,7 +82,6 @@ def draw():
             text = LETTERS_FONT.render(ltr, True, DARK_BLUE)
             screen.blit(text, (x - text.get_width() / 2, y - text.get_height() / 2))
 
-    # screen.blit(images[current_state], (280, 130))
     screen.blit(images[current_state], (280, 130))
     pygame.display.update()
 
@@ -118,7 +116,6 @@ def finish_play():
         pygame.display.update()
         if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
             continue
-
 
 
 def play():

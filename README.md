@@ -1,6 +1,6 @@
 # Advanced Hangman Game
 
-![Hangman Game Screenshot](assets/images/screenshot.png)
+![Hangman Game Screenshot](assets/images/hangman_screenshot.png)
 
 A classic Hangman game with multiple difficulty levels and word categories, built with Python and Pygame.
 

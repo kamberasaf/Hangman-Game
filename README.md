@@ -1,4 +1,4 @@
-# Advanced Hangman Game
+# Hangman Game
 
 ![Hangman Game Screenshot](assets/images/hangman_screenshot.png)
 
